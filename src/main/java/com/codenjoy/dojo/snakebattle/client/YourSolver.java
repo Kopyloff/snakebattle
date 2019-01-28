@@ -29,6 +29,9 @@ import com.codenjoy.dojo.client.WebSocketRunner;
 import com.codenjoy.dojo.services.Dice;
 import com.codenjoy.dojo.services.RandomDice;
 
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  * User: your name
  * Это твой алгоритм AI для игры. Реализуй его на свое усмотрение.
@@ -55,7 +58,7 @@ public class YourSolver implements Solver<Board> {
     public static void main(String[] args) {
         WebSocketRunner.runClient(
                 // paste here board page url from browser after registration
-                "http://codenjoy.com:80/codenjoy-contest/board/player/your@email.com?code=12345678901234567890",
+                URLResolver.getURL(),
                 new YourSolver(new RandomDice()),
                 new Board());
     }
